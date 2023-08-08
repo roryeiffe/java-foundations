@@ -4,7 +4,7 @@ import java.util.Objects;
 
 // Class - Setting up blueprint and all Vehicle objects will adhere to this blue print:
 // @Data Lombok - gives you getters and setters, toString
-public class Vehicle{
+public class Vehicle extends Object{
     // as we define fields, we can use different types:
     // int is whole number
     // making a variable private means we can't directly access it outside of this class
@@ -14,6 +14,21 @@ public class Vehicle{
     private String color;
     // double speed
     private double speed;
+
+    // all-args constructor
+    public Vehicle(int numWheels, String color, double speed) {
+        // what is some good logic to put in our constructor (Creating an object)
+        // a common use case is setting our fields:
+        this.setNumWheels(numWheels);
+        this.setColor(color);
+        this.setSpeed(speed);
+    }
+
+    // This is more or less what Java would create if we did NOT provide a constructor
+    // But, since we defined an all-args constructor, we have to write it ourselves now
+    public Vehicle() {
+
+    }
 
 
     // This is a method because it indicates some action that we're taking:
@@ -103,6 +118,19 @@ public class Vehicle{
             otherCar will be the first/only parameter in the method so it will be "object"
             myCar.equals(otherCar)
              */
+    }
+
+    // we're overriding or changing up a method that was inherited from a parent class
+//    @Override
+//    public int hashCode() {
+//        // because color is a string and String is a class, it already has its own implementation of converting to an int
+//        return this.numWheels + (int) this.speed + this.color.hashCode();
+//    }
+
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(numWheels, color, speed);
     }
 
     // psvm => public static voic main

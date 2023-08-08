@@ -13,15 +13,15 @@ public class App
         // 2 - Variable name - what we refer to if we want to "access" this object (fields, invoking methods)
         // 3 - new keyword - whenever we create an object, we use the new keyword to allocate space on the heap
         // 1     2       3     4
-        Vehicle myCar = new Vehicle();
+        Vehicle myCar = new Vehicle(4, "blue", 50);
         // when we print this out as is, we might get org.example.Vehicle@65ab7765
         // for now, all we see is package info and some random memory stuff
         // we don't have the fields set yet so this will be 0's and nulls
         System.out.println(myCar);
         // in Java, strings must be enclosed in double quotes
-        myCar.setColor("blue");
-        myCar.setNumWheels(4);
-        myCar.setSpeed(50);
+//        myCar.setColor("blue");
+//        myCar.setNumWheels(4);
+//        myCar.setSpeed(50);
 
 
         System.out.println(myCar.getColor());
@@ -54,6 +54,17 @@ public class App
         System.out.println(myCar.equals(45));
         // new Vehicle() will have nulls and 0's
         System.out.println(myCar.equals(new Vehicle()));
+
+        // which of these will have same/different hash codes?
+        // these 2 should have same hash codes:
+        System.out.println(myCar.hashCode());
+        System.out.println(otherCar.hashCode());
+
+        Vehicle differentCar = new Vehicle();
+        differentCar.setColor("purple");
+        differentCar.setSpeed(10);
+        differentCar.setNumWheels(4);
+        System.out.println(differentCar.hashCode());
 
 
 
