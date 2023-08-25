@@ -122,10 +122,12 @@
   - Different could mean many things
     - different number of parameters
     - different types of parameters
-    - different types of parameters
+    - different order of parameters
 
 #### Overriding
 - Run-Time Polymorphism
+- We keep the parameters and return types
+- Only difference is logic from parent to child
 
 ### Inheritance
 - Having parent-child relationships in our code
@@ -134,13 +136,14 @@
 - super keyword - lets us access stuff from parent
   - super.field
   - super.method()
-  - super() - call the constructor
+  - super() - call the constructor of the parent, must be first statement of constructor body
 - Override - take something from the parent class and we change it, usually by making it more specific to the child class
 - Override - re-writing a method for the child class
 - Inheritance is useful for creating is-a relationships
   - Dog is an animal
   - Car is a vehicle
   - pizza is a food
+  - heart patient is a patient
 
 ### Abstraction
 
@@ -150,3 +153,14 @@
 - protected - can be accessed from the same package or from a sub-class (even if the sub-class isn't in the package)
 - default access - if you don't write an access modifier, the default level of access if just from anywhere in the package (same folder)
 - private - only from that class
+
+## Shortcuts
+### IDE-Specific Shortcuts
+- sout - System.out.println()
+- psvm - public static void main(String [] args)
+- Right-Click + "Generate" - generate getters/setters/constructors/etc.
+### Java Specific Shortcuts
+- for one-line bodies (if-statements, loops, etc.), don't need curly braces:
+- ```java
+if(age >= 18) System.out.println("Adult");
+```
